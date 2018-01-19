@@ -16,6 +16,26 @@ echo date_format($date,"G:i dS F");
 '</p>';
 
 ?>
+<?php
+$studentNo = $_POST['StudentNumberInput'];
+$firstName = $_POST['FirstNameInput']; 
+$surname = $_POST['SurnameInput'];
+$email = $_POST['EmailInput'];
+$course = $_POST['CourseTitleInput'];
+$year = $_POST['YearInCollegeInput'];
+$paid = $_POST['PaidRadio'];
+$committee = $_POST['CommitteeRadio'];
+
+include ("detail.php"); 
+
+$sql  = "INSERT INTO members (";
+$sql .= "studentID, firstName, surname, email, course, yearOfCollege, paid, committee";
+$sql .= ") VALUES (";
+$sql .= "'$studentNo', '$firstName', '$surname', '$email ', '$course ', '$year', '$paid', '$committee')";
+
+$result = $db->query($sql); 
+?>
+
 
 </body>
 
