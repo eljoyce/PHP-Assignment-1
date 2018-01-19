@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="ga" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+</head>
+
+<body>
+
+<p>Society Membership Form</p>
+<form action="processApplication.php" method="post" name="membershipForm" id="membershipForm">
+	<table style="width: 57%">
+		<tr>
+			<td style="width: 207px"><label id="StudentNumberLabel">Student Number:</label></td>
+			<td style="width: 353px">
+			<input name="StudentNumberInput" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="FirstNameLabel">First Name:</label></td>
+			<td style="width: 353px">
+			<input name="FirstNameInput" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="SurnameLabel">Surname:</label></td>
+			<td style="width: 353px"><input name="SurnameInput" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="EmailLabel">Email Address:</label></td>
+			<td style="width: 353px"><input name="Email Input" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id ="CourseTitleLabel"> Course Title:</label></td>
+			<td style="width: 353px"><input name="CourseTitleInput" type="text" /></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="YearInCollegeLabel">Year in College:</label></td>
+			<td style="width: 353px">
+			<select name="YearInCollegeDropdown" style="width: 146px">
+			<option></option>
+			<option value="Junior Fresh">Junior Fresh</option>
+			<option value="Senior Fresh">Senior Fresh</option>
+			<option value="Junior Sophister ">Junior Sophister</option>
+			<option value="Senior Sophister">Senior Sophister</option>
+			<option value="Masters">Masters</option>
+			<option value="PHD">PHD</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="paidLabel">Paid membership fee?</label></td>
+			<td style="width: 353px">
+			<input name="Paid Radio" type="radio" checked="checked" /><label id="Label8">Paid
+			</label><input name="Paid Radio" type="radio" /><label id="Label9">Not 
+			Paid</label></td>
+		</tr>
+		<tr>
+			<td style="width: 207px"><label id="committeelabel">Part of the Committee?</label></td>
+			<td style="width: 353px">
+			<input checked="checked" name="CommitteeRadio" type="radio" /><label id="Label6">Yes
+			</label><input name="CommitteeRadio" type="radio" /><label id="Label7">No</label></td>
+		</tr>
+		<tr>
+			<td colspan="2"><div align="center">
+			<input type="submit" name="Submit" value="Submit Order">
+			</div></td>
+		</tr>
+
+	</table>
+</form>
+
+</body>
+
+</html>
