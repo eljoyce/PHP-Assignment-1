@@ -10,13 +10,6 @@
 <body>
 
 <?php
-echo "<p>Application Successfully Submitted at:</p>";
-$date=date_create();
-echo date_format($date,"G:i dS F");
-'</p>';
-
-?>
-<?php
 $studentNo = $_POST['StudentNumberInput'];
 $firstName = $_POST['FirstNameInput']; 
 $surname = $_POST['SurnameInput'];
@@ -25,17 +18,31 @@ $course = $_POST['CourseTitleInput'];
 $year = $_POST['YearInCollegeInput'];
 $paid = $_POST['PaidRadio'];
 $committee = $_POST['CommitteeRadio'];
+if(empty($committee)){
+echo " empty c";
+}
+if(empty($paid)){
+echo " empty p";
+}
 
 include ("detail.php"); 
 
 $sql  = "INSERT INTO members (";
 $sql .= "studentID, firstName, surname, email, course, yearOfCollege, paid, committee";
 $sql .= ") VALUES (";
-$sql .= "'$studentNo', '$firstName', '$surname', '$email ', '$course ', '$year', '$paid', '$committee')";
+$sql .= "'$studentNo', '$firstName', '$surname', '$email ', '$course ', '$year', '$paid', '$committee');";
 
 $result = $db->query($sql); 
-?>
 
+echo "<p>Application Successfully Submitted at:</p>";
+$date=date_create();
+echo date_format($date,"G:i dS F");
+'</p>';
+
+?>
+<script language="javascript">	
+	document.location.replace("applicationComplete.php");
+</script>
 
 </body>
 
