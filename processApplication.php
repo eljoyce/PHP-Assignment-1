@@ -27,13 +27,24 @@ echo " empty p";
 
 include ("detail.php"); 
 
+$sql = "select * from members where studentID like '%".$studentNo."%'";
+$result = $db->query($sql);
+
+$num_results = mysqli_num_rows ($result);
+
+   if ($num_results != 0) {
+   header("Location: errorStudentNo.html");
+  }
+   else {
+
+
 $sql  = "INSERT INTO members (";
 $sql .= "studentID, firstName, surname, email, course, yearOfCollege, paid, committee";
 $sql .= ") VALUES (";
 $sql .= "'$studentNo', '$firstName', '$surname', '$email ', '$course ', '$year', '$paid', '$committee');";
 
 $result = $db->query($sql); 
-
+}
 echo "<p>Application Successfully Submitted at:</p>";
 $date=date_create();
 echo date_format($date,"G:i dS F");
