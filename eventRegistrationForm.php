@@ -30,16 +30,13 @@ body {
 		<tr>
 			<td style="width: 207px; height: 26px;"><label id="StudentNumberLabel">Student Number:</label></td>
 			<td style="width: 353px; height: 26px;">
-			<?php 
-			session_start();
-			?>
-			<input name="StudentNumber" value = '<?php echo $_SESSION['StudentNumber']?>' type="text" readonly="readonly" /></td>
+			<input name="StudentNumber" value = '<?php session_start(); echo $_SESSION['StudentNumber'];?>'type="text" readonly="readonly" /></td>
 		</tr>
 		<tr>
 		
 			<td style="width: 207px"><label id="YearInCollegeLabel">Event:</label></td>
 			<td style="width: 353px">
-			<select name="YearInCollegeInput" style="width: 146px">
+			<select name="EventName" style="width: 146px">
 			<option></option>
 			<option value="Junior Fresh">Junior Fresh</option>
 			</select></td>
@@ -48,48 +45,36 @@ body {
 			<td colspan="2"><div align="center">
 			<input type="submit" name="Submit" value="Submit Order"> <br />
 				<br />
-				<a href="index.html">
+				<a href="home.html">
 				<img alt="Select here to go to the society's home page" height="49" src="homeImage.png" width="94" class="auto-style1" /></a></div></td>
 		</tr>
 </table>
 <p>
 <?php
-		$sql = "SELECT eventName FROM events;";
-		include ("detail.php"); 
+		include ("detail.php");
+		$sql = "SELECT eventID, eventName FROM events;";
 		$result = $db->query($sql);
 		$row = mysqli_fetch_assoc($result);
-		echo "<select name='eventName'>";
-		while ($row = mysql_fetch_array($result)) {
-                  unset($name);
-                  $name = $row['eventName']; 
-                  echo '<option value="'.$eventName.'">'.$name.'</option>';
-                 
+		$num_results = mysqli_num_rows ($result);
+		echo $num_results;
+		echo "<select name='eventName' style='width: 146px'>";
+		//
+		for($i = 0; $i < $num_results; $i++){
+  			echo "<option value='" . $row['eventName'] ."'>" . $row['eventName'] ."</option>";
+  			$row = mysqli_fetch_assoc($result);
 		}
 		echo "</select>";
-		?></p>
+
+//while ($row = mysqli_fetch_array($result)) {
+  //               unset($name);
+    //             $name = $row['eventName']; 
+      //           echo '<option value="'.$eventName.'">'.$name.'</option>';
+                 
+		//}
+		//echo "</select>";
+		// Loop through the query results, outputing the options one by one
+				?></p>
 <p>
-<?php
-&lt;SCRIPT language=JavaScript&gt;
-function reload(form)
-{
-var val=form.cat.options[form.cat.options.selectedIndex].value;
-self.location='index.php?cat=' + val ;
-}
-&lt;/script&gt;
-
-$quer2 = mysql_query("SELECT eventName FROM events ");
-echo "&lt;form method=post name=f1 action='index-check.php'&gt;";
-echo "&lt;select name='eventName' onchange=\\"reload(this.form)\\"&gt;&lt;option value=''&gt;Select Category&lt;/option&gt;";
-
-while($noticia2 = mysql_fetch_array($quer2))
-{ 
-  if($noticia2['cat_id']==@$cat) 
-    {echo "&lt;option selected value='$noticia2[cat_id]'&gt;$noticia2[category]&lt;/option&gt;"."&lt;BR&gt;";}
-  else{echo  "&lt;option value='$noticia2[cat_id]'&gt;$noticia2[category]&lt;/option&gt;";}
-}
-
-echo "&lt;/select&gt;";
-?>
 </p>
 </form>
 

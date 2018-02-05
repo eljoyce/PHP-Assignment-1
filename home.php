@@ -140,7 +140,8 @@ Here you can browse and sign up for upcomming events and even create events of y
 &nbsp;</p>
 <p>&nbsp;</p>
 <p class="auto-style7" style="height: 33px">
-<img id="img1" alt="Log Out" height="30" width ="130" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'button51.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button4F.jpg')" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'button50.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button50.jpg')" src="button4F.jpg" style="border: 0" width="100" /><!-- MSComment="ibutton" fp-style="fp-btn: Braided Row 1" fp-title="Log Out" --></p>
+<a href="logOut.php">
+<img id="img1" alt="Log Out" height="30" width ="130" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'button51.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button4F.jpg')" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'button50.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button50.jpg')" src="button4F.jpg" style="border: 0" width="100" /><!-- MSComment="ibutton" fp-style="fp-btn: Braided Row 1" fp-title="Log Out" --></a></p>
 <p>
 </p>
 </body>
