@@ -23,6 +23,7 @@ location VARCHAR(30),
 dateOfEvent date,
 timeOfEvent time,
 capacity int,
+price double,
 PRIMARY KEY (eventID)
 );
 

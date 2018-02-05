@@ -28,24 +28,20 @@ body {
 <form action="processApplication.php" method="post" name="membershipForm" id="membershipForm">
 	<table style="width: 57%">
 		<tr>
-			<td style="width: 207px"><label id="StudentNumberLabel">Student Number:</label></td>
-			<td style="width: 353px">
+			<td style="width: 207px; height: 26px;"><label id="StudentNumberLabel">Student Number:</label></td>
+			<td style="width: 353px; height: 26px;">
 			<?php 
 			session_start();
 			?>
-			<input name="StudentNumber" value = '<?php echo $_SESSION['StudentNumber']?>' type="text" /></td>
+			<input name="StudentNumber" value = '<?php echo $_SESSION['StudentNumber']?>' type="text" readonly="readonly" /></td>
 		</tr>
 		<tr>
+		
 			<td style="width: 207px"><label id="YearInCollegeLabel">Event:</label></td>
 			<td style="width: 353px">
 			<select name="YearInCollegeInput" style="width: 146px">
 			<option></option>
 			<option value="Junior Fresh">Junior Fresh</option>
-			<option value="Senior Fresh">Senior Fresh</option>
-			<option value="Junior Sophister ">Junior Sophister</option>
-			<option value="Senior Sophister">Senior Sophister</option>
-			<option value="Masters">Masters</option>
-			<option value="PHD">PHD</option>
 			</select></td>
 		</tr>
 		<tr>
@@ -55,8 +51,46 @@ body {
 				<a href="index.html">
 				<img alt="Select here to go to the society's home page" height="49" src="homeImage.png" width="94" class="auto-style1" /></a></div></td>
 		</tr>
+</table>
+<p>
+<?php
+		$sql = "SELECT eventName FROM events;";
+		include ("detail.php"); 
+		$result = $db->query($sql);
+		$row = mysqli_fetch_assoc($result);
+		echo "<select name='eventName'>";
+		while ($row = mysql_fetch_array($result)) {
+                  unset($name);
+                  $name = $row['eventName']; 
+                  echo '<option value="'.$eventName.'">'.$name.'</option>';
+                 
+		}
+		echo "</select>";
+		?></p>
+<p>
+<?php
+&lt;SCRIPT language=JavaScript&gt;
+function reload(form)
+{
+var val=form.cat.options[form.cat.options.selectedIndex].value;
+self.location='index.php?cat=' + val ;
+}
+&lt;/script&gt;
 
-	</table>
+$quer2 = mysql_query("SELECT eventName FROM events ");
+echo "&lt;form method=post name=f1 action='index-check.php'&gt;";
+echo "&lt;select name='eventName' onchange=\\"reload(this.form)\\"&gt;&lt;option value=''&gt;Select Category&lt;/option&gt;";
+
+while($noticia2 = mysql_fetch_array($quer2))
+{ 
+  if($noticia2['cat_id']==@$cat) 
+    {echo "&lt;option selected value='$noticia2[cat_id]'&gt;$noticia2[category]&lt;/option&gt;"."&lt;BR&gt;";}
+  else{echo  "&lt;option value='$noticia2[cat_id]'&gt;$noticia2[category]&lt;/option&gt;";}
+}
+
+echo "&lt;/select&gt;";
+?>
+</p>
 </form>
 
 </body>

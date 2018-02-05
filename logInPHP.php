@@ -46,7 +46,7 @@ $num_results = mysqli_num_rows ($result);
    session_start();
    $_SESSION['FirstName'] = $row['firstName'];
    $_SESSION['StudentNumber'] = $row['studentID'];
-   header("Location: events.php");
+   header("Location: home.php");
   }
    else {
    echo 'Login Unsuccessful'; 

@@ -18,12 +18,6 @@ $course = $_POST['CourseTitleInput'];
 $year = $_POST['YearInCollegeInput'];
 $paid = $_POST['PaidRadio'];
 $committee = $_POST['CommitteeRadio'];
-if(empty($committee)){
-echo " empty c";
-}
-if(empty($paid)){
-echo " empty p";
-}
 
 include ("detail.php"); 
 
@@ -44,6 +38,15 @@ $sql .= ") VALUES (";
 $sql .= "'$studentNo', '$firstName', '$surname', '$email ', '$course ', '$year', '$paid', '$committee');";
 
 $result = $db->query($sql); 
+$sql = "select * from members where studentID like '%".$studentNo."%'";
+$result = $db->query($sql);
+$row = mysqli_fetch_assoc($result);
+$num_results = mysqli_num_rows ($result);
+
+session_start();
+   $_SESSION['FirstName'] = $row['firstName'];
+   $_SESSION['StudentNumber'] = $row['studentID'];
+
 }
 echo "<p>Application Successfully Submitted at:</p>";
 $date=date_create();

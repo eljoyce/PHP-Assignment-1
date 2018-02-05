@@ -2,8 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale =1.0">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Untitled 1</title>
+<style type="text/css">
+body {
+  background-image: url("knitting%20top%20image.png");
+  background-attachment:fixed;
+  background-position: top centre;
+  background-repeat: no-repeat;
+}
+.auto-style1 {
+	border-width: 0px;
+}
+</style>
+
 <script type="text/javascript">
 <!--
 function FP_preloadImgs() {//v1.0
@@ -31,15 +44,27 @@ function FP_getObjectByID(id,o) {//v1.0
 </head>
 
 <body onload="FP_preloadImgs(/*url*/'button30.jpg',/*url*/'button31.jpg')">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <?php
 echo "<p>Application Successfully Submitted at:</p>";
 $date=date_create();
 echo date_format($date,"G:i dS F");
+
 '</p>';
 ?>
 <p>
-Would you like to login to our society's home page? If so select this button 
-<a href="index.html">
+Thank you for your application <?php session_start(); echo $_SESSION['FirstName']; ?>
+ . If you would like to log into our society's home page, please select this button
+<a href="home.php">
 <img id="img1" alt="" height="20" onmousedown="FP_swapImg(1,0,/*id*/'img1',/*url*/'button31.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img1',/*url*/'button2F.jpg')" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'button30.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img1',/*url*/'button30.jpg')" src="button2F.jpg" style="border: 0" width="100" /><!-- MSComment="ibutton" fp-style="fp-btn: Chain Column 1" fp-title="" --></a> 
 </p>
 </body>
