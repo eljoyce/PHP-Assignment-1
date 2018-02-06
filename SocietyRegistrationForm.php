@@ -4,7 +4,7 @@
 <head>
 <meta content="ga" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Untitled 1</title>
+<title>Registration</title>
 <style type="text/css">
 body {
   background-image: url("knitting%20top%20image.png");

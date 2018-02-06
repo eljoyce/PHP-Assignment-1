@@ -2,9 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<meta name="viewport" content="width=device-width, initial-scale =1.0">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Event Submission</title>
+<title>Untitled 1</title>
 <style type="text/css">
 body {
   background-image: url("knitting%20top%20image.png");
@@ -75,15 +74,6 @@ body {
 	</ul>
 </div>
 
-<?php
-echo "<p class='auto-style4'>Application Successfully Submitted at:</br>";
-$date=date_create();
-echo date_format($date,"G:i dS F");
-'</p>';
-?>
-<p class="auto-style4">
-<span class="auto-style3">Thank you for your submission!</span>
-</p>
 </body>
 
 </html>

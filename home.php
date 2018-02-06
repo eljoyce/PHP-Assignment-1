@@ -118,13 +118,15 @@ function FP_getObjectByID(id,o) {//v1.0
 &nbsp;</p>
 <p>
 &nbsp;</p>
-<p class="auto-style3">
-<div id="nav" style="height: 30px">
-	<ul style="width: 918px">
-		<li class="auto-style7" style="width: 300px"><a href="eventRegistrationForm.php">My Events</a></li>
+<p >
+<div id="nav" style="height: 30px; width: 104%;">
+	<ul style="width: 950px">
+		<li class="auto-style7" style="width: 150px"><a href="eventRegistrationForm.php">My Events</a></li>
 		<li class="auto-style7">
-		<a href="eventRegistrationForm.php" style="width: 293px">Event Sign-Up</a></li>
-		<li style="width: 291px" class="auto-style7"><a href="createEvent.php">Create a New Event</a></li>
+		<a href="eventRegistrationForm.php" style="width: 150px">Event Sign-Up</a></li>
+		<li style="width: 200px" class="auto-style7"><a href="createEvent.php">Create a New Event</a></li>
+		<li class="auto-style7" style="width: 150px"><a href="queries.php">Queries</a></li>
+		<li class="auto-style7" style="width: 150px"><a href="reports.php">Reports</a></li>
 	</ul>
 </div>
 </p><p class="auto-style6">
